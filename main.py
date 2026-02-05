@@ -6,7 +6,7 @@ import torch.optim as optim
 import numpy as np
 
 from config import get_args
-from model import TwoStageLSTMAutoencoder
+from model import MATTS
 from dataloader import load_and_preprocess_data, prepare_dataloaders
 from train import train_epoch, validate
 from utils import (
@@ -38,8 +38,8 @@ def train(args):
     )
     
     # Initialize model
-    logger.info('Initializing TwoStageLSTMAutoencoder model...')
-    model = TwoStageLSTMAutoencoder(
+    logger.info('Initializing MATTS model...')
+    model = MATTS(
         input_dim=data_loaders['input_size'],
         hidden_dim=args.hidden_size,
         seq_length=args.seq_length,
@@ -203,7 +203,7 @@ def inference(args):
         return None
     
     logger.info('Loading model...')
-    model = TwoStageLSTMAutoencoder(
+    model = MATTS(
         input_dim=data_loaders['input_size'],
         hidden_dim=args.hidden_size,
         seq_length=args.seq_length,
