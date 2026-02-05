@@ -7,20 +7,6 @@ from sklearn.metrics import f1_score
 
 
 def train_epoch(model, train_loader, optimizer, device, config, abnormal_class_weights=None):
-    """
-    Train for one epoch
-    
-    Args:
-        model: Model to train
-        train_loader: Training dataloader
-        optimizer: Optimizer
-        device: Device (cuda/cpu)
-        config: Configuration dictionary with loss weights
-        abnormal_class_weights: Class weights for imbalanced data
-        
-    Returns:
-        Dictionary containing training metrics
-    """
     model.train()
     total_loss = 0
     
@@ -95,19 +81,6 @@ def train_epoch(model, train_loader, optimizer, device, config, abnormal_class_w
 
 
 def validate(model, val_loader, device, config, abnormal_class_weights=None):
-    """
-    Validate model
-    
-    Args:
-        model: Model to validate
-        val_loader: Validation dataloader
-        device: Device (cuda/cpu)
-        config: Configuration dictionary with loss weights
-        abnormal_class_weights: Class weights for imbalanced data
-        
-    Returns:
-        Dictionary containing validation metrics
-    """
     model.eval()
     total_loss = 0
     
