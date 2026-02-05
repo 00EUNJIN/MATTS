@@ -2,20 +2,7 @@ import torch
 import torch.nn as nn
 
 
-class TwoStageLSTMAutoencoder(nn.Module):
-    """
-    Two-Stage LSTM Autoencoder for Multi-class Anomaly Detection
-    
-    Stage 1: Anomaly Detection (Binary Classification)
-    Stage 2: Anomaly Type Classification (Multi-class)
-    
-    Args:
-        input_dim: Number of input features
-        hidden_dim: Hidden dimension for LSTM layers
-        seq_length: Length of input sequences
-        anomaly_threshold: Threshold for anomaly detection (default: 0.5)
-    """
-    
+class MATTS(nn.Module):
     def __init__(self, input_dim, hidden_dim, seq_length, anomaly_threshold=0.5):
         super(TwoStageLSTMAutoencoder, self).__init__()
         self.seq_length = seq_length
