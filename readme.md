@@ -50,7 +50,6 @@ The optimal hyperparameters were independently selected for each dataset based o
 | Reconstruction loss weight | 1         | 1         | 1         |
 | Anomaly loss weight        | 5         | 5         | 10        |
 | Class loss weight          | 10        | 15        | 15        |
-| Anomaly threshold (τ)      | 0.5       | 0.5       | 0.5       |
 
 ---
 
@@ -61,17 +60,6 @@ The optimal hyperparameters were independently selected for each dataset based o
 * Early stopping: enabled (patience = 10)
 * Loss weighting: enabled to address severe class imbalance
 * Regularization: no explicit dropout or L2 regularization applied
-
----
-
-## Computational Information
-
-| Hidden Size | Trainable Parameters | Model Size |
-| ----------: | -------------------: | ---------: |
-|          16 |                4,773 |   0.018 MB |
-|          32 |               12,101 |   0.046 MB |
-
-Training time and inference efficiency vary depending on dataset size and operating conditions and are reported in detail in the experimental section of the paper.
 
 ---
 
